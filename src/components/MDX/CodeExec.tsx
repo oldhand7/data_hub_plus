@@ -29,7 +29,7 @@ function LevelText({type}: {type: LogLevel}) {
 function CodeExec({level = 'info', children}: CodeExecProps) {
   let message: string | undefined;
 
-  message = children?.props?.children;
+  message = (children as any)?.props?.children;
   // if (typeof children === 'string') {
   //   message = children;
   // } else if (
@@ -92,7 +92,7 @@ function CodeExec({level = 'info', children}: CodeExecProps) {
         <div className="text-primary-dark dark:text-primary-dark flex text-sm px-4 py-0.5 relative flex-reverse">
           <button
             style={{marginLeft: 'auto', marginRight: '30px'}}
-            onClick={() => onRunCode(message?.props?.children)}>
+            onClick={() => onRunCode((message as any)?.props?.children)}>
             <IconTerminal className="inline-flex me-2 self-center" /> Run Code
           </button>
           {/* <div>
@@ -102,7 +102,7 @@ function CodeExec({level = 'info', children}: CodeExecProps) {
             <button
               className="w-full text-start text-primary-dark dark:text-primary-dark "
               onClick={() => {
-                console.log(message?.props?.children);
+                console.log((message as any)?.props?.children);
 
                 window.navigator.clipboard.writeText(message ?? '');
                 setCopied(true);

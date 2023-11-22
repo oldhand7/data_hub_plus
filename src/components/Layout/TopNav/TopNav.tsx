@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -140,14 +141,7 @@ export default function TopNav({
 }: {
   routeTree: RouteItem;
   breadcrumbs: RouteItem[];
-  section:
-    | 'learn'
-    | 'reference'
-    | 'community'
-    | 'blog'
-    | 'home'
-    | 'unknown'
-    | 'python';
+  section: any;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const scrollParentRef = useRef<HTMLDivElement>(null);

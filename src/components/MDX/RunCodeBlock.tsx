@@ -43,7 +43,7 @@ function RunCodeBlock({children}: RunCodeBlockProps) {
   useEffect(() => {
     let message: string | undefined;
     console.log(children);
-    let className = children.props.children.props.className;
+    let className = (children as any).props.children.props.className;
     if (className == 'language-python') {
       setCodeMode(71);
     } else if (className == 'language-sql') {
@@ -58,10 +58,10 @@ function RunCodeBlock({children}: RunCodeBlockProps) {
     ) {
       message = children.props.children;
     } else {
-      message = children.props.children?.props?.children;
+      message = (children as any).props.children?.props?.children;
       console.log(message);
     }
-    setMessage(message);
+    setMessage(message || '');
   }, []);
 
   const onRun = async () => {
