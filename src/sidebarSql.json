@@ -1,0 +1,123 @@
+{
+  "title": "sql",
+  "path": "/sql",
+  "routes": [
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "GET STARTED"
+    },
+
+    {
+      "title": "Basics",
+      "path": "/sql",
+      "routes": [
+        {
+          "title": "Introduction",
+          "path": "/sql/000-introduction"
+        },
+        {
+          "title": "databases",
+          "path": "/sql/001-databases"
+        },
+        {
+          "title": "install mysql",
+          "path": "/sql/002-install-mysql"
+        },
+        {
+          "title": "Creating Table",
+          "path": "/sql/003-creating-tables"
+        },
+        {
+          "title": "Basic syntax",
+          "path": "/sql/004-basic-syntax"
+        },
+
+        {
+          "title": "Select",
+          "path": "/sql/005-select"
+        },
+
+        {
+          "title": "Where",
+          "path": "/sql/006-where"
+        },
+        {
+          "title": "Order and Group By",
+          "path": "/sql/007-order-and-group-by"
+        },
+        {
+          "title": "Insert",
+          "path": "/sql/008-insert"
+        },
+
+        {
+          "title": "Update",
+          "path": "/sql/009-update"
+        },
+
+        {
+          "title": "Delete",
+          "path": "/sql/010-delete"
+        },
+        {
+          "title": "Join",
+          "path": "/sql/011-join"
+        },
+        {
+          "title": "Sql command categories",
+          "path": "/sql/012-sql-command-categories"
+        },
+        {
+          "title": "Sub queries",
+          "path": "/sql/013-sub-queries"
+        },
+        {
+          "title": "Unions",
+          "path": "/sql/014-unions"
+        },
+
+        {
+          "title": "Keys in a Relational Database",
+          "path": "/sql/015-Keys-in-a-Relational-Database"
+        },
+
+        {
+          "title": "Logical operator keywords",
+          "path": "/sql/016-Logical-operator-keywords"
+        },
+        {
+          "title": "Having clause aggregate functions",
+          "path": "/sql/017-having-clause_aggregate-functions"
+        },
+        {
+          "title": "Essential Mysql functions",
+          "path": "/sql/018-essential-mysql-functions"
+        },
+        {
+          "title": "triggers in sql",
+          "path": "/sql/019-triggers-in-sql"
+        },
+        {
+          "title": "TCL commands",
+          "path": "/sql/020-TCL-commands"
+        },
+        {
+          "title": "DCL commands",
+          "path": "/sql/021-DCL-commands"
+        },
+        {
+          "title": "Mysql Dump",
+          "path": "/sql/100-mysqldump"
+        },
+        {
+          "title": "Learn materialize",
+          "path": "/sql/101-learn-materialize"
+        },
+        {
+          "title": "conclusion",
+          "path": "/sql/999-conclusion"
+        }
+      ]
+    }
+  ]
+}

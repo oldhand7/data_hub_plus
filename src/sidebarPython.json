@@ -1,0 +1,126 @@
+{
+  "title": "python",
+  "path": "/python",
+  "routes": [
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "GET STARTED"
+    },
+
+    {
+      "title": "Basics",
+      "path": "/python/basics",
+      "routes": [
+        {
+          "title": "What's programmeing",
+          "path": "/python/basics/what-is-programming"
+        },
+        {
+          "title": "Installing Python",
+          "path": "/python/basics/installing-python"
+        },
+        {
+          "title": "Getting started with Python",
+          "path": "/python/basics/getting-started"
+        },
+        {
+          "title": "ThinkPython: The way of the program",
+          "path": "/python/basics/the-way-of-the-program"
+        },
+        {
+          "title": "Variables, Booleans and None",
+          "path": "/python/basics/variables"
+        },
+
+        {
+          "title": "Using functions",
+          "path": "/python/basics/using-functions"
+        },
+
+        {
+          "title": "If, else and elif",
+          "path": "/python/basics/if"
+        },
+        {
+          "title": "Handy stuff with strings",
+          "path": "/python/basics/handy-stuff-strings"
+        },
+        {
+          "title": "Lists and tuples",
+          "path": "/python/basics/lists-and-tuples"
+        },
+
+        {
+          "title": "Loops",
+          "path": "/python/basics/loops"
+        },
+
+        {
+          "title": "zip and enumerate",
+          "path": "/python/basics/zip-and-enumerate"
+        },
+        {
+          "title": "Dictionaries",
+          "path": "/python/basics/dicts"
+        },
+        {
+          "title": "Defining functions",
+          "path": "/python/basics/defining-functions"
+        },
+        {
+          "title": "What is true?",
+          "path": "/python/basics/what-is-true"
+        },
+        {
+          "title": "Files",
+          "path": "/python/basics/files"
+        },
+
+        {
+          "title": "Modules",
+          "path": "/python/basics/modules"
+        },
+
+        {
+          "title": "Exceptions",
+          "path": "/python/basics/exceptions"
+        },
+        {
+          "title": "Classes",
+          "path": "/python/basics/classes"
+        },
+        {
+          "title": "Docstrings",
+          "path": "/python/basics/docstrings"
+        }
+      ]
+    },
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "Advanced Python"
+    },
+    {
+      "title": "Advanced Python",
+      "tags": [],
+      "path": "/python/advanced",
+      "routes": [
+        {
+          "title": "Handy data types",
+          "path": "/python/advanced/datatypes"
+        },
+        {
+          "title": "functions",
+          "path": "/python/advanced/functions"
+        },
+        {
+          "title": "Magic Methods",
+          "path": "/python/advanced/magicmethods"
+        },
+        {
+          "title": "Iterables, iterators and generators",
+          "path": "/python/advanced/iters"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "title": "sql",
+  "path": "/r",
+  "routes": [
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "GET STARTED"
+    },
+
+    {
+      "title": "Basics",
+      "path": "/r",
+      "routes": [
+        {
+          "title": "R Basics",
+          "path": "/r/01-R-Basics"
+        },
+        {
+          "title": "Data Types",
+          "path": "/r/02-Data-Types"
+        },
+        {
+          "title": "Vectors",
+          "path": "/r/03-Vectors"
+        },
+        {
+          "title": "Sorting",
+          "path": "/r/04-Sorting"
+        },
+
+        {
+          "title": "Vector Arithmetics",
+          "path": "/r/05-Vector-Arithmetics"
+        },
+        {
+          "title": "Indexing",
+          "path": "/r/06-Indexing"
+        },
+        {
+          "title": "Basic Data Wrangling",
+          "path": "/r/07-Basic-Data-Wrangling"
+        },
+        {
+          "title": "Indexing",
+          "path": "/r/08-Basic-Plots"
+        },
+        {
+          "title": "Programming Basics",
+          "path": "/r/09-Programming-Basics"
+        }
+      ]
+    }
+  ]
+}
