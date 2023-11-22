@@ -8,7 +8,7 @@
 const nextConfig = {
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
   reactStrictMode: true,
-  distDir: 'build',
+
   experimental: {
     // TODO: Remove after https://github.com/vercel/next.js/issues/49355 is fixed
     appDir: false,
