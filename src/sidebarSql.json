@@ -63,10 +63,7 @@
           "title": "Join",
           "path": "/sql/011-join"
         },
-        {
-          "title": "Sql command categories",
-          "path": "/sql/012-sql-command-categories"
-        },
+
         {
           "title": "Sub queries",
           "path": "/sql/013-sub-queries"
@@ -74,11 +71,6 @@
         {
           "title": "Unions",
           "path": "/sql/014-unions"
-        },
-
-        {
-          "title": "Keys in a Relational Database",
-          "path": "/sql/015-Keys-in-a-Relational-Database"
         },
 
         {
@@ -97,22 +89,7 @@
           "title": "triggers in sql",
           "path": "/sql/019-triggers-in-sql"
         },
-        {
-          "title": "TCL commands",
-          "path": "/sql/020-TCL-commands"
-        },
-        {
-          "title": "DCL commands",
-          "path": "/sql/021-DCL-commands"
-        },
-        {
-          "title": "Mysql Dump",
-          "path": "/sql/100-mysqldump"
-        },
-        {
-          "title": "Learn materialize",
-          "path": "/sql/101-learn-materialize"
-        },
+
         {
           "title": "conclusion",
           "path": "/sql/999-conclusion"

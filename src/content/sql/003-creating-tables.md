@@ -96,16 +96,14 @@ Let's say that we wanted to create a `users` table with the following columns:
 
 The query that we would need to run to create that table would be:
 
+
 <RunBlock>
 ```sql
-CREATE TABLE users
-(
-    id INT,
-    username VARCHAR(255),
-    about TEXT,
-    birthday DATE,
-    active BOOL
-);
+CREATE TABLE Employees (Id INT ,FName VARCHAR(35) ,LName VARCHAR(35) ,PhoneNumber VARCHAR(11));
+INSERT INTO Employees (Id, FName, LName, PhoneNumber) VALUES(1, 'James', 'Smith', '1234567890');
+INSERT INTO Employees (Id, FName, LName, PhoneNumber) VALUES(2, 'James', 'Smith', '1234567890');
+INSERT INTO Employees (Id, FName, LName, PhoneNumber) VALUES(3, 'James', 'Smith', '1234567890');
+SELECT * FROM Employees
 ```
 </RunBlock>
 
@@ -205,14 +203,14 @@ The primary key column, which in our case is the `id` column, is a unique identi
 
 We want the `id` column to be unique, and also, whenever we add new users, we want the ID of the user to autoincrement for each new user.
 
-This can be achieved with a primary key and `AUTO_INCREMENT`. The primary key column needs to be `NOT NULL` as well.
+This can be achieved with a primary key and ``. The primary key column needs to be `NOT NULL` as well.
 
 If we were to alter the table creation statement, it would look like this:
 
 ```sql
 CREATE TABLE users
 (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY ,
     username VARCHAR(255) NOT NULL,
     about TEXT,
     birthday DATE,

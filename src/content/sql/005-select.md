@@ -13,16 +13,15 @@ CREATE DATABASE sql_demo;
 
 Switch to that database:
 
-```sql
-USE sql_demo;
-```
 
 Create a new users table:
+
+<RunBlock>
 
 ```sql
 CREATE TABLE users
 (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY ,
     username VARCHAR(255) NOT NULL,
     about TEXT,
     email VARCHAR(255),
@@ -30,8 +29,10 @@ CREATE TABLE users
     active BOOL
 );
 ```
+</RunBlock>
 
 Insert some data that we could work with:
+
 
 ```sql
 INSERT INTO users
@@ -59,6 +60,36 @@ Now that we've got some data in the `users` table, let's go ahead and retrieve a
 SELECT * FROM users;
 ```
 
+
+<RunBlock>
+
+
+```sql
+CREATE TABLE users
+(
+    id INT PRIMARY KEY ,
+    username VARCHAR(255) NOT NULL,
+    about TEXT,
+    email VARCHAR(255),
+    birthday DATE,
+    active BOOL
+);
+
+
+
+INSERT INTO users
+  ( username, email, active )
+VALUES
+  ('bobby', 'b@devdojo.com', true),
+  ('devdojo', 'd@devdojo.com', false),
+  ('tony', 't@devdojo.com', true);
+
+SELECT * FROM users;
+
+```
+
+</RunBlock>
+
 Rundown of the statement:
 
 * `SELECT`: First, we specify the action that we want to execute, in our case, we want to select or get some data from the database.
@@ -79,83 +110,8 @@ This will return all of the entries in the `users` table along with all of the c
 3 rows in set (0.00 sec)
 ```
 
+
 As you can see, we get a list of the 3 users that we've just created, including all of the columns in that table. In some cases, the table might have a lot of columns, and you might not want to see all of them. For example, we have the `about` and `birthday` columns that are all `NULL` at the moment. So let's see how we could limit that and get only a list of specific columns.
-
-## Pattern matching
-SQL pattern matching let's you to search for patterns if you don't know the exact word or phrase you are looking for. To do this, we use so-called wildcard characters to match a pattern together with LIKE and ILIKE operators.
-
-Two of the most common wildcard characters are `_` and `%`.
-
-`_` matches any single character and `%` matches an arbitrary number of characters.
-
-Let's see an example how you would look for a `username` ending with `y`:
-
-```sql
-SELECT * FROM users WHERE username LIKE '%y';
-```
-
-Output:
-```
-+----+----------+-------+----------+--------+---------------+
-| id | username | about | birthday | active | email         |
-+----+----------+-------+----------+--------+---------------+
-|  1 | bobby    | NULL  | NULL     |      1 | b@devdojo.com |
-|  3 | tony     | NULL  | NULL     |      1 | t@devdojo.com |
-+----+----------+-------+----------+--------+---------------+
-```
-As you can see above, we used `%` to match any number of characters preceding the character `y`.
-
-If we know the exact number of characters we want to match, we can use `_`. Each `_` represents a single character.
-
-So, if we want to look up an username that has `e` as its second character, we would do something like this:
-
-```sql
-SELECT * FROM users WHERE username LIKE '_e%';
-```
-
-Output: 
-```
-+----+----------+-------+----------+--------+---------------+
-| id | username | about | birthday | active | email         |
-+----+----------+-------+----------+--------+---------------+
-|  2 | devdojo  | NULL  | NULL     |      0 | d@devdojo.com |
-+----+----------+-------+----------+--------+---------------+
-```
-
-Please, keep in mind that `LIKE` operator is case sensitive, meaning it won't mach capital letters with lowercase letters and vice versa. If you wish to ignore capitalization, use `ILIKE` operator instead.
-
-
-## Formatting
-
-As we mentioned in the previous chapters, each SQL statement needs to end with a  semi-colon: `;`. Alternatively, rather than using a  semi-colon, you could use the `\G` characters which would format the output in a list rather than a table.
-
-The syntax is absolutely the same but you just change the `;` with `\G`:
-
-```sql
-SELECT * FROM users \G
-```
-
-The output will be formatted like this:
-
-```
-*************************** 1. row ***************************
-      id: 1
-username: bobby
-   about: NULL
-birthday: NULL
-  active: 1
-   email: b@devdojo.com
-*************************** 2. row ***************************
-      id: 2
-username: devdojo
-   about: NULL
-birthday: NULL
-  active: 0
-   email: d@devdojo.com
-...
-```
-
-This is very handy whenever your table consists of a large number of columns and they can't fit on the screen, which makes it very hard to read the result set.
 
 ## SELECT specific columns only
 
@@ -181,44 +137,6 @@ As you can see, we are getting back only the 2 columns that we've specified in t
 
 > **NOTE:**  _SQL names are case insensitive. For example, username ≡ USERNAME ≡ userName._
 
-## SELECT with no FROM Clause
-
-In a SQL statement, a column can be a literal with no `FROM` clause.
-
-```sql
-SELECT 'Sunil' as username;
-```
-
-Output:
-
-```
-+----------+
-| username |
-+----------+
-| Sunil    |
-+----------+
-```
-
-## SELECT with Arithmetic Operations
-
-The select clause can contain arithmetic expressions involving the operation +, –, *, and /.
-
-```sql
-SELECT username, active*5 as new_active FROM users;
-```
-
-Output:
-
-```
-+----------+------------+
-| username | new_active |
-+----------+------------+
-| bobby    |          5 |
-| devdojo  |          0 |
-| tony     |          5 |
-+----------+------------+
-```
-
 ## LIMIT
 
 The `LIMIT` clause is very handy in case that you want to limit the number of results that you get back. For example, at the moment, we have 3 users in our database, but let's say that you only wanted to get 1 entry back when you run the `SELECT` statement.
@@ -238,6 +156,33 @@ Output:
 |  2 | bobby    | NULL  | NULL     |      1 | b@devdojo.com |
 +----+----------+-------+----------+--------+---------------+
 ```
+
+
+<RunBlock>
+
+
+```sql
+CREATE TABLE users
+(
+    id INT PRIMARY KEY ,
+    username VARCHAR(255) NOT NULL,
+    about TEXT,
+    email VARCHAR(255),
+    birthday DATE,
+    active BOOL
+);
+INSERT INTO users
+  ( username, email, active )
+VALUES
+  ('bobby', 'b@devdojo.com', true),
+  ('devdojo', 'd@devdojo.com', false),
+  ('tony', 't@devdojo.com', true);
+
+SELECT * FROM users LIMIT 1;
+
+```
+
+</RunBlock>
 
 If you wanted to get 2 entries, you would change `LIMIT 2` and so on.
 

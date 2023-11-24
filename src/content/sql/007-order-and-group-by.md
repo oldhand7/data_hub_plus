@@ -53,6 +53,37 @@ The output, in this case, will be:
 +----+----------+
 ```
 
+
+
+<RunBlock>
+
+
+```sql
+CREATE TABLE users
+(
+    id INT PRIMARY KEY ,
+    username VARCHAR(255) NOT NULL,
+    about TEXT,
+    email VARCHAR(255),
+    birthday DATE,
+    active BOOL
+);
+INSERT INTO users
+  ( username, email, active )
+VALUES
+  ('bobby', 'b@devdojo.com', true),
+  ('devdojo', 'd@devdojo.com', false),
+  ('tony', 't@devdojo.com', true),
+    ('bobby', 'b@devdojo.com', true),
+  ('devdojo', 'd@devdojo.com', false),
+  ('tony', 't@devdojo.com', true);
+
+SELECT id, username FROM users ORDER BY username;
+
+```
+
+</RunBlock>
+
 > Note: You can use `ORDER BY` with and without specifying a `WHERE` clause. If you've used a `WHERE` clause, you must put the `ORDER BY` clause after the `WHERE` clause.
 
 The default sorting is ascending and is specified with the `ASC` keyword, and you don't need to add it explicitly, but if you want to sort by descending order, you need to use the `DESC` keyword.

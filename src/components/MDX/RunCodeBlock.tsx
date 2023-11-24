@@ -11,11 +11,6 @@ import {
   SandpackConsumer,
 } from '@codesandbox/sandpack-react/unstyled';
 type LogLevel = 'info' | 'warning' | 'error';
-import 'codemirror/lib/codemirror.css'; // Import CodeMirror styles
-import ConsoleBlock from './ConsoleBlock';
-import TerminalBlock from './TerminalBlock';
-import CodeBlock from './CodeBlock';
-import OutputBlock from './OutputBlock';
 import {runCode} from '../../utils/judgeApi';
 
 interface RunCodeBlockProps {
@@ -69,8 +64,15 @@ function RunCodeBlock({children}: RunCodeBlockProps) {
       console.log(sMessage);
       let res = await runCode(sMessage, codeMode);
       console.log(res);
-      if (res.stderr != '') {
-        setResult({...sResult, val: ' ' + res.stdout, success: 0});
+
+      if (res.stderr != null) {
+        setResult({...sResult, val: ' ' + res.stderr, success: 0});
+      } else {
+        setResult({
+          ...sResult,
+          val: res.stdout == null ? 'success' : res.stdout,
+          success: 1,
+        });
       }
     } catch (error) {}
     // console.log(result);

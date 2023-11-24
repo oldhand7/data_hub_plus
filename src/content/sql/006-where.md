@@ -29,6 +29,33 @@ Output:
 +----------+---------------+--------+
 ```
 
+
+<RunBlock>
+
+
+```sql
+CREATE TABLE users
+(
+    id INT PRIMARY KEY ,
+    username VARCHAR(255) NOT NULL,
+    about TEXT,
+    email VARCHAR(255),
+    birthday DATE,
+    active BOOL
+);
+INSERT INTO users
+  ( username, email, active )
+VALUES
+  ('bobby', 'b@devdojo.com', true),
+  ('devdojo', 'd@devdojo.com', false),
+  ('tony', 't@devdojo.com', true);
+
+SELECT * FROM users WHERE active=1;
+
+```
+
+</RunBlock>
+
 As you can see, we are only getting `tony` and `bobby` back as their `active` column is `true` or `1`. If we wanted to get the inactive users, we would have to change the `WHERE` clause and set the `active` to `false`:
 
 ```

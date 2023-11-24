@@ -29,7 +29,7 @@ USE demo_joins;
 ```sql
 CREATE TABLE users
 (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY ,
     username VARCHAR(255) NOT NULL
 );
 ```
@@ -39,7 +39,7 @@ CREATE TABLE users
 ```sql
 CREATE TABLE posts
 (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY ,
     user_id INT,
     title VARCHAR(255) NOT NULL
 );
