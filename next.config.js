@@ -15,7 +15,7 @@ const nextConfig = {
     scrollRestoration: true,
     // legacyBrowsers: false,
   },
-
+  
   env: {},
   webpack: (config, {dev, isServer, ...options}) => {
     if (process.env.ANALYZE) {

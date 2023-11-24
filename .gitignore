@@ -36,3 +36,4 @@ yarn-error.log*
 
 # external fonts
 public/fonts/**/Optimistic_*.woff2
+
