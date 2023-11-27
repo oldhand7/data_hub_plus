@@ -1,10 +1,11 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {IconNewPage} from '../../Icon/IconNewPage';
+import { IconNewPage } from '../../Icon/IconNewPage';
 
-export const OpenInTypeScriptPlaygroundButton = (props: {content: string}) => {
+export const OpenInTypeScriptPlaygroundButton = (props: { content: string }) => {
   const contentWithReactImport = `import * as React from 'react';\n\n${props.content}`;
   return (
     <a

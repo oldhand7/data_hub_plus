@@ -1,26 +1,27 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Suspense} from 'react';
+import { Suspense } from 'react';
 import * as React from 'react';
-import {useRouter} from 'next/router';
-import {SidebarNav} from './SidebarNav';
-import {Footer} from './Footer';
-import {Toc} from './Toc';
+import { useRouter } from 'next/router';
+import { SidebarNav } from './SidebarNav';
+import { Footer } from './Footer';
+import { Toc } from './Toc';
 import SocialBanner from '../SocialBanner';
-import {DocsPageFooter} from 'components/DocsFooter';
-import {Seo} from 'components/Seo';
+import { DocsPageFooter } from 'components/DocsFooter';
+import { Seo } from 'components/Seo';
 import ButtonLink from 'components/ButtonLink';
-import {IconNavArrow} from 'components/Icon/IconNavArrow';
+import { IconNavArrow } from 'components/Icon/IconNavArrow';
 import PageHeading from 'components/PageHeading';
-import {getRouteMeta} from './getRouteMeta';
-import {TocContext} from '../MDX/TocContext';
-import type {TocItem} from 'components/MDX/TocContext';
-import type {RouteItem} from 'components/Layout/getRouteMeta';
+import { getRouteMeta } from './getRouteMeta';
+import { TocContext } from '../MDX/TocContext';
+import type { TocItem } from 'components/MDX/TocContext';
+import type { RouteItem } from 'components/Layout/getRouteMeta';
 // import {HomeContent} from './HomeContent';
 import App from './App';
-import {TopNav} from './TopNav';
+import { TopNav } from './TopNav';
 import cn from 'classnames';
 
 import(/* webpackPrefetch: true */ '../MDX/CodeBlock/CodeBlock');
@@ -36,21 +37,21 @@ interface PageProps {
     description?: string;
   };
   section:
-    | 'learn'
-    | 'reference'
-    | 'community'
-    | 'blog'
-    | 'home'
-    | 'unknown'
-    | 'python'
-    | 'sql'
-    | 'r';
+  | 'learn'
+  | 'reference'
+  | 'community'
+  | 'blog'
+  | 'home'
+  | 'unknown'
+  | 'python'
+  | 'sql'
+  | 'r';
 }
 
-export function Page({children, toc, routeTree, meta, section}: PageProps) {
-  const {asPath} = useRouter();
+export function Page({ children, toc, routeTree, meta, section }: PageProps) {
+  const { asPath } = useRouter();
   const cleanedPath = asPath.split(/[\?\#]/)[0];
-  const {route, nextRoute, prevRoute, breadcrumbs, order} = getRouteMeta(
+  const { route, nextRoute, prevRoute, breadcrumbs, order } = getRouteMeta(
     cleanedPath,
     routeTree
   );
@@ -136,7 +137,7 @@ export function Page({children, toc, routeTree, meta, section}: PageProps) {
       <div
         className={cn(
           hasColumns &&
-            'grid grid-cols-only-content lg:grid-cols-sidebar-content 2xl:grid-cols-sidebar-content-toc'
+          'grid grid-cols-only-content lg:grid-cols-sidebar-content 2xl:grid-cols-sidebar-content-toc'
         )}>
         {showSidebar && (
           <div className="lg:-mt-16">

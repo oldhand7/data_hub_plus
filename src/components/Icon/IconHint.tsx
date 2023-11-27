@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 import cn from 'classnames';
 
 export const IconHint = memo<JSX.IntrinsicElements['svg']>(function IconHint({

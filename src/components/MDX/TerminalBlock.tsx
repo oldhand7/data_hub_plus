@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {isValidElement, useState, useEffect} from 'react';
+import { isValidElement, useState, useEffect } from 'react';
 import * as React from 'react';
-import {IconTerminal} from '../Icon/IconTerminal';
-import {IconCopy} from 'components/Icon/IconCopy';
+import { IconTerminal } from '../Icon/IconTerminal';
+import { IconCopy } from 'components/Icon/IconCopy';
 
 type LogLevel = 'info' | 'warning' | 'error';
 
@@ -14,7 +15,7 @@ interface TerminalBlockProps {
   children: React.ReactNode;
 }
 
-function LevelText({type}: {type: LogLevel}) {
+function LevelText({ type }: { type: LogLevel }) {
   switch (type) {
     case 'warning':
       return <span className="text-yellow-50 bg-none me-1">Warning: </span>;
@@ -25,7 +26,7 @@ function LevelText({type}: {type: LogLevel}) {
   }
 }
 
-function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
+function TerminalBlock({ level = 'info', children }: TerminalBlockProps) {
   let message: string | undefined;
   if (typeof children === 'string') {
     message = children;

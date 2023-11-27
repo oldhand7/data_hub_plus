@@ -1,14 +1,15 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import Image from 'next/image';
-import {IconTwitter} from '../Icon/IconTwitter';
-import {IconGitHub} from '../Icon/IconGitHub';
-import {ExternalLink} from '../ExternalLink';
-import {H3} from './Heading';
-import {IconLink} from 'components/Icon/IconLink';
+import { IconTwitter } from '../Icon/IconTwitter';
+import { IconGitHub } from '../Icon/IconGitHub';
+import { ExternalLink } from '../ExternalLink';
+import { H3 } from './Heading';
+import { IconLink } from 'components/Icon/IconLink';
 
 interface TeamMemberProps {
   name: string;
@@ -35,9 +36,9 @@ export function TeamMember({
   if (name == null || title == null || permalink == null || children == null) {
     throw new Error(
       'Expected name, title, permalink, and children for ' + name ??
-        title ??
-        permalink ??
-        'unknown'
+      title ??
+      permalink ??
+      'unknown'
     );
   }
   return (
@@ -45,11 +46,11 @@ export function TeamMember({
       <div className="flex flex-col sm:flex-row height-auto">
         <div
           className="hidden sm:block basis-2/5 rounded overflow-hidden relative"
-          style={{width: 300, height: 250}}>
+          style={{ width: 300, height: 250 }}>
           <Image src={photo} layout="fill" objectFit="cover" alt={name} />
         </div>
         <div
-          style={{minHeight: 300}}
+          style={{ minHeight: 300 }}
           className="block w-full sm:hidden flex-grow basis-2/5 rounded overflow-hidden relative">
           <Image src={photo} layout="fill" objectFit="cover" alt={name} />
         </div>

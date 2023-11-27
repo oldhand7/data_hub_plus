@@ -1,0 +1,4 @@
+.cm-s-material:first,
+.CodeMirror-scroll:first {
+    display: none !important
+}

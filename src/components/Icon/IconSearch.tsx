@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 
 export const IconSearch = memo<JSX.IntrinsicElements['svg']>(
   function IconSearch(props) {

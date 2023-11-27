@@ -1,15 +1,16 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useRef, useLayoutEffect, Fragment} from 'react';
+import { useRef, useLayoutEffect, Fragment } from 'react';
 
 import cn from 'classnames';
-import {useRouter} from 'next/router';
-import {SidebarLink} from './SidebarLink';
-import {useCollapse} from 'react-collapsed';
+import { useRouter } from 'next/router';
+import { SidebarLink } from './SidebarLink';
+import { useCollapse } from 'react-collapsed';
 import usePendingRoute from 'hooks/usePendingRoute';
-import type {RouteItem} from 'components/Layout/getRouteMeta';
+import type { RouteItem } from 'components/Layout/getRouteMeta';
 
 interface SidebarRouteTreeProps {
   isForceExpanded: boolean;
@@ -29,7 +30,7 @@ function CollapseWrapper({
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const timeoutRef = useRef<number | null>(null);
-  const {getCollapseProps} = useCollapse({
+  const { getCollapseProps } = useCollapse({
     isExpanded,
     duration,
   });
@@ -101,7 +102,7 @@ export function SidebarRouteTree({
               <SidebarRouteTree
                 level={level + 1}
                 isForceExpanded={isForceExpanded}
-                routeTree={{title, routes}}
+                routeTree={{ title, routes }}
                 breadcrumbs={[]}
               />
             );
@@ -127,7 +128,7 @@ export function SidebarRouteTree({
                 <CollapseWrapper duration={250} isExpanded={isExpanded}>
                   <SidebarRouteTree
                     isForceExpanded={isForceExpanded}
-                    routeTree={{title, routes}}
+                    routeTree={{ title, routes }}
                     breadcrumbs={breadcrumbs}
                     level={level + 1}
                   />

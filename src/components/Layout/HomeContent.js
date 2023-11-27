@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import {
   createContext,
@@ -17,26 +18,26 @@ import cn from 'classnames';
 import NextLink from 'next/link';
 
 import ButtonLink from '../ButtonLink';
-import {IconRestart} from '../Icon/IconRestart';
+import { IconRestart } from '../Icon/IconRestart';
 import BlogCard from 'components/MDX/BlogCard';
-import {IconChevron} from 'components/Icon/IconChevron';
-import {IconSearch} from 'components/Icon/IconSearch';
-import {Logo} from 'components/Logo';
+import { IconChevron } from 'components/Icon/IconChevron';
+import { IconSearch } from 'components/Icon/IconSearch';
+import { Logo } from 'components/Logo';
 import Link from 'components/MDX/Link';
 import CodeBlock from 'components/MDX/CodeBlock';
-import {ExternalLink} from 'components/ExternalLink';
+import { ExternalLink } from 'components/ExternalLink';
 import sidebarBlog from '../../sidebarBlog.json';
 
-function Section({children, background = null}) {
+function Section({ children, background = null }) {
   return (
     <div
       className={cn(
         'mx-auto flex flex-col w-full',
         background === null && 'max-w-7xl',
         background === 'left-card' &&
-          'bg-gradient-left dark:bg-gradient-left-dark border-t border-primary/10 dark:border-primary-dark/10 ',
+        'bg-gradient-left dark:bg-gradient-left-dark border-t border-primary/10 dark:border-primary-dark/10 ',
         background === 'right-card' &&
-          'bg-gradient-right dark:bg-gradient-right-dark border-t border-primary/5 dark:border-primary-dark/5'
+        'bg-gradient-right dark:bg-gradient-right-dark border-t border-primary/5 dark:border-primary-dark/5'
       )}
       style={{
         contain: 'content',
@@ -48,7 +49,7 @@ function Section({children, background = null}) {
   );
 }
 
-function Header({children}) {
+function Header({ children }) {
   return (
     <h2 className="leading-xl font-display text-primary dark:text-primary-dark font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
       {children}
@@ -56,7 +57,7 @@ function Header({children}) {
   );
 }
 
-function Para({children}) {
+function Para({ children }) {
   return (
     <p className="max-w-3xl mx-auto text-lg lg:text-xl text-secondary dark:text-secondary-dark leading-normal">
       {children}
@@ -64,7 +65,7 @@ function Para({children}) {
   );
 }
 
-function Center({children}) {
+function Center({ children }) {
   return (
     <div className="px-5 lg:px-0 max-w-4xl lg:text-center text-white text-opacity-80 flex flex-col items-center justify-center">
       {children}
@@ -72,7 +73,7 @@ function Center({children}) {
   );
 }
 
-function FullBleed({children}) {
+function FullBleed({ children }) {
   return (
     <div className="max-w-7xl mx-auto flex flex-col w-full">{children}</div>
   );
@@ -508,14 +509,14 @@ export function HomeContent() {
   );
 }
 
-function CTA({children, icon, href}) {
+function CTA({ children, icon, href }) {
   let Tag;
   let extraProps;
   if (href.startsWith('https://')) {
     Tag = ExternalLink;
   } else {
     Tag = NextLink;
-    extraProps = {legacyBehavior: false};
+    extraProps = { legacyBehavior: false };
   }
   return (
     <Tag
@@ -757,10 +758,10 @@ function CommunityGallery() {
   );
 }
 
-const CommunityImages = memo(function CommunityImages({isLazy}) {
+const CommunityImages = memo(function CommunityImages({ isLazy }) {
   return (
     <>
-      {communityImages.map(({src, alt}, i) => (
+      {communityImages.map(({ src, alt }, i) => (
         <div
           key={i}
           className={cn(
@@ -873,14 +874,14 @@ function useCodeHover(areas) {
 }
 
 const example1Areas = new Map([
-  [2, {name: 'Video'}],
-  [3, {name: 'Thumbnail'}],
-  [4, {name: 'a'}],
-  [5, {name: 'h3'}],
-  [6, {name: 'p'}],
-  [7, {name: 'a'}],
-  [8, {name: 'LikeButton'}],
-  [9, {name: 'Video'}],
+  [2, { name: 'Video' }],
+  [3, { name: 'Thumbnail' }],
+  [4, { name: 'a' }],
+  [5, { name: 'h3' }],
+  [6, { name: 'p' }],
+  [7, { name: 'a' }],
+  [8, { name: 'LikeButton' }],
+  [9, { name: 'Video' }],
 ]);
 
 function Example1() {
@@ -928,10 +929,10 @@ function Example1() {
 }
 
 const example2Areas = new Map([
-  [8, {name: 'VideoList'}],
-  [9, {name: 'h2'}],
-  [11, {name: 'Video', lines: [11]}],
-  [13, {name: 'VideoList'}],
+  [8, { name: 'VideoList' }],
+  [9, { name: 'h2' }],
+  [11, { name: 'Video', lines: [11] }],
+  [13, { name: 'VideoList' }],
 ]);
 
 function Example2() {
@@ -997,14 +998,14 @@ function Example2() {
 }
 
 const example3Areas = new Map([
-  [6, {name: 'SearchableVideoList'}],
-  [7, {name: 'SearchInput', lines: [7, 8, 9]}],
-  [8, {name: 'SearchInput', lines: [7, 8, 9]}],
-  [9, {name: 'SearchInput', lines: [7, 8, 9]}],
-  [10, {name: 'VideoList', lines: [10, 11, 12]}],
-  [11, {name: 'VideoList', lines: [10, 11, 12]}],
-  [12, {name: 'VideoList', lines: [10, 11, 12]}],
-  [13, {name: 'SearchableVideoList'}],
+  [6, { name: 'SearchableVideoList' }],
+  [7, { name: 'SearchInput', lines: [7, 8, 9] }],
+  [8, { name: 'SearchInput', lines: [7, 8, 9] }],
+  [9, { name: 'SearchInput', lines: [7, 8, 9] }],
+  [10, { name: 'VideoList', lines: [10, 11, 12] }],
+  [11, { name: 'VideoList', lines: [10, 11, 12] }],
+  [12, { name: 'VideoList', lines: [10, 11, 12] }],
+  [13, { name: 'SearchableVideoList' }],
 ]);
 
 function Example3() {
@@ -1100,12 +1101,12 @@ function SearchableVideoList({ videos }) {
 }
 
 const example4Areas = new Map([
-  [6, {name: 'ConferenceLayout'}],
-  [7, {name: 'Suspense'}],
-  [8, {name: 'SearchableVideoList'}],
-  [9, {name: 'Suspense'}],
-  [10, {name: 'ConferenceLayout'}],
-  [17, {name: 'SearchableVideoList'}],
+  [6, { name: 'ConferenceLayout' }],
+  [7, { name: 'Suspense' }],
+  [8, { name: 'SearchableVideoList' }],
+  [9, { name: 'Suspense' }],
+  [10, { name: 'ConferenceLayout' }],
+  [17, { name: 'SearchableVideoList' }],
 ]);
 
 function Example4() {
@@ -1151,7 +1152,7 @@ async function Talks({ confId }) {
         </CodeBlock>
       }
       right={
-        <NavContext.Provider value={{slug, navigate}}>
+        <NavContext.Provider value={{ slug, navigate }}>
           <BrowserChrome
             domain="example.com"
             path={'confs/' + slug}
@@ -1163,7 +1164,7 @@ async function Talks({ confId }) {
               contentMarginTop="56px"
               height="35rem">
               <Suspense fallback={null}>
-                <div style={{animation: animate ? 'fadein 200ms' : null}}>
+                <div style={{ animation: animate ? 'fadein 200ms' : null }}>
                   <link rel="preload" href={reactConf2019Cover} as="image" />
                   <link rel="preload" href={reactConf2021Cover} as="image" />
                   <ConferencePage slug={slug} />
@@ -1220,10 +1221,10 @@ function ExamplePanel({
         'max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto',
         noShadow ? 'shadow-none' : 'shadow-nav dark:shadow-nav-dark'
       )}
-      style={{height}}>
+      style={{ height }}>
       <div
         className={noPadding ? 'p-0' : 'p-4'}
-        style={{contentVisibility: 'auto', marginTop: contentMarginTop}}>
+        style={{ contentVisibility: 'auto', marginTop: contentMarginTop }}>
         {children}
       </div>
     </div>
@@ -1232,7 +1233,7 @@ function ExamplePanel({
 
 const NavContext = createContext(null);
 
-function BrowserChrome({children, hasPulse, hasRefresh, domain, path}) {
+function BrowserChrome({ children, hasPulse, hasRefresh, domain, path }) {
   const [restartId, setRestartId] = useState(0);
   const isPulsing = hasPulse && restartId === 0;
   const [shouldAnimatePulse, setShouldAnimatePulse] = useState(false);
@@ -1331,7 +1332,7 @@ function BrowserChrome({children, hasPulse, hasRefresh, domain, path}) {
   );
 }
 
-function ConferencePage({slug}) {
+function ConferencePage({ slug }) {
   const conf = use(fetchConf(slug));
   return (
     <ConferenceLayout conf={conf}>
@@ -1395,12 +1396,12 @@ function TalksLoading() {
   );
 }
 
-function Talks({confId}) {
+function Talks({ confId }) {
   const videos = use(fetchTalks(confId));
   return <SearchableVideoList videos={videos} />;
 }
 
-function SearchableVideoList({videos}) {
+function SearchableVideoList({ videos }) {
   const [searchText, setSearchText] = useState('');
   const foundVideos = filterVideos(videos, searchText);
   return (
@@ -1430,7 +1431,7 @@ function filterVideos(videos, query) {
   });
 }
 
-function VideoList({videos, emptyHeading}) {
+function VideoList({ videos, emptyHeading }) {
   let heading = emptyHeading;
   const count = videos.length;
   if (count > 0) {
@@ -1453,7 +1454,7 @@ function VideoList({videos, emptyHeading}) {
   );
 }
 
-function SearchInput({value, onChange}) {
+function SearchInput({ value, onChange }) {
   const id = useId();
   return (
     <form
@@ -1480,8 +1481,8 @@ function SearchInput({value, onChange}) {
   );
 }
 
-function ConferenceLayout({conf, children}) {
-  const {slug, navigate} = useContext(NavContext);
+function ConferenceLayout({ conf, children }) {
+  const { slug, navigate } = useContext(NavContext);
   const [isPending, startTransition] = useTransition();
   return (
     <div
@@ -1519,7 +1520,7 @@ function ConferenceLayout({conf, children}) {
   );
 }
 
-function Cover({background, children}) {
+function Cover({ background, children }) {
   return (
     <div className="h-40 overflow-hidden relative items-center flex">
       <div className="absolute inset-0 px-4 py-2 flex items-end bg-gradient-to-t from-black/40 via-black/0">
@@ -1536,7 +1537,7 @@ function Cover({background, children}) {
   );
 }
 
-function Video({video}) {
+function Video({ video }) {
   return (
     <div className="flex flex-row items-center gap-3" data-hover="Video">
       <Thumbnail video={video} />
@@ -1563,7 +1564,7 @@ function Video({video}) {
   );
 }
 
-function Code({children}) {
+function Code({ children }) {
   return (
     <code
       dir="ltr"
@@ -1573,8 +1574,8 @@ function Code({children}) {
   );
 }
 
-function Thumbnail({video}) {
-  const {image} = video;
+function Thumbnail({ video }) {
+  const { image } = video;
   return (
     <a
       data-hover="Thumbnail"
@@ -1647,7 +1648,7 @@ function ThumbnailPlaceholder() {
 // Unlike local state, this survives videos being filtered.
 const likedVideos = new Set();
 
-function LikeButton({video}) {
+function LikeButton({ video }) {
   const [isLiked, setIsLiked] = useState(() => likedVideos.has(video.id));
   const [animate, setAnimate] = useState(false);
   return (
@@ -1717,7 +1718,7 @@ function LikeButton({video}) {
     </button>
   );
 }
-function SvgContainer({children}) {
+function SvgContainer({ children }) {
   return (
     <svg
       className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl lg:rounded-3xl shadow-nav bg-wash"

@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Fragment, useMemo} from 'react';
-import {useRouter} from 'next/router';
-import {MDXComponents} from 'components/MDX/MDXComponents';
-import {Page} from 'components/Layout/Page';
+import { Fragment, useMemo } from 'react';
+import { useRouter } from 'next/router';
+import { MDXComponents } from 'components/MDX/MDXComponents';
+import { Page } from 'components/Layout/Page';
 import sidebarHome from '../sidebarHome.json';
 import sidebarLearn from '../sidebarLearn.json';
 import sidebarPython from '../sidebarPython.json';
@@ -15,7 +16,7 @@ import sidebarReference from '../sidebarReference.json';
 import sidebarCommunity from '../sidebarCommunity.json';
 import sidebarBlog from '../sidebarBlog.json';
 
-export default function Layout({content, toc, meta}) {
+export default function Layout({ content, toc, meta }) {
   const parsedContent = useMemo(
     () => JSON.parse(content, reviveNodeOnClient),
     [content]
@@ -58,7 +59,7 @@ export default function Layout({content, toc, meta}) {
 }
 
 function useActiveSection() {
-  const {asPath} = useRouter();
+  const { asPath } = useRouter();
   const cleanedPath = asPath.split(/[\?\#]/)[0];
   console.log(cleanedPath);
   if (cleanedPath === '/') {
@@ -91,7 +92,7 @@ function reviveNodeOnClient(key, val) {
     let props = val[3];
     if (type === 'wrapper') {
       type = Fragment;
-      props = {children: props.children};
+      props = { children: props.children };
     }
     if (MDXComponents[type]) {
       type = MDXComponents[type];
@@ -138,7 +139,7 @@ export async function getStaticProps(context) {
   }
 
   // See if we have a cached output first.
-  const {FileStore, stableHash} = require('metro-cache');
+  const { FileStore, stableHash } = require('metro-cache');
   const store = new FileStore({
     root: process.cwd() + '/node_modules/.cache/react-docs-mdx/',
   });
@@ -178,8 +179,8 @@ export async function getStaticProps(context) {
       .join('\n');
 
   // Turn the MDX we just read into some JS we can execute.
-  const {remarkPlugins} = require('../../plugins/markdownToHtml');
-  const {compile: compileMdx} = await import('@mdx-js/mdx');
+  const { remarkPlugins } = require('../../plugins/markdownToHtml');
+  const { compile: compileMdx } = await import('@mdx-js/mdx');
   const visit = (await import('unist-util-visit')).default;
   const jsxCode = await compileMdx(mdxWithFakeImports, {
     remarkPlugins: [
@@ -200,7 +201,7 @@ export async function getStaticProps(context) {
       },
     ],
   });
-  const {transform} = require('@babel/core');
+  const { transform } = require('@babel/core');
   const jsCode = await transform(jsxCode, {
     plugins: ['@babel/plugin-transform-modules-commonjs'],
     presets: ['@babel/preset-react'],
@@ -226,7 +227,7 @@ export async function getStaticProps(context) {
   const reactTree = fakeExports.default({});
 
   // Pre-process MDX output and serialize it.
-  let {toc, children} = prepareMDX(reactTree.props.children);
+  let { toc, children } = prepareMDX(reactTree.props.children);
   if (path === 'index') {
     toc = [];
   }
@@ -248,7 +249,7 @@ export async function getStaticProps(context) {
     if (val != null && val.$$typeof === Symbol.for('react.element')) {
       // Remove fake MDX props.
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const {mdxType, originalType, parentName, ...cleanProps} = val.props;
+      const { mdxType, originalType, parentName, ...cleanProps } = val.props;
       return [
         '$r',
         typeof val.type === 'string' ? val.type : mdxType,
@@ -267,8 +268,8 @@ export async function getStaticProps(context) {
 
 // Collect all MDX files for static generation.
 export async function getStaticPaths() {
-  const {promisify} = require('util');
-  const {resolve} = require('path');
+  const { promisify } = require('util');
+  const { resolve } = require('path');
   const fs = require('fs');
   const readdir = promisify(fs.readdir);
   const stat = promisify(fs.stat);

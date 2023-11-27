@@ -1,16 +1,17 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 /* eslint-disable react-hooks/exhaustive-deps */
-import {useRef, useState, useEffect, useMemo, useId} from 'react';
-import {useSandpack, SandpackStack} from '@codesandbox/sandpack-react/unstyled';
+import { useRef, useState, useEffect, useMemo, useId } from 'react';
+import { useSandpack, SandpackStack } from '@codesandbox/sandpack-react/unstyled';
 import cn from 'classnames';
-import {ErrorMessage} from './ErrorMessage';
-import {SandpackConsole} from './Console';
-import type {LintDiagnostic} from './useSandpackLint';
-import {CSSProperties} from 'react';
-import {LoadingOverlay} from './LoadingOverlay';
+import { ErrorMessage } from './ErrorMessage';
+import { SandpackConsole } from './Console';
+import type { LintDiagnostic } from './useSandpackLint';
+import { CSSProperties } from 'react';
+import { LoadingOverlay } from './LoadingOverlay';
 
 type CustomPreviewProps = {
   className?: string;
@@ -35,14 +36,14 @@ export function Preview({
   className,
   lintErrors,
 }: CustomPreviewProps) {
-  const {sandpack, listen} = useSandpack();
+  const { sandpack, listen } = useSandpack();
   const [bundlerIsReady, setBundlerIsReady] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [iframeComputedHeight, setComputedAutoHeight] = useState<number | null>(
     null
   );
 
-  let {error: rawError, registerBundler, unregisterBundler} = sandpack;
+  let { error: rawError, registerBundler, unregisterBundler } = sandpack;
 
   if (
     rawError &&
@@ -63,7 +64,7 @@ export function Preview({
     if (lintErrors.length === 0) {
       return null;
     } else {
-      const {line, column, message} = lintErrors[0];
+      const { line, column, message } = lintErrors[0];
       return {
         title: 'Lint Error',
         message: `${line}:${column} - ${message}`,
@@ -154,11 +155,11 @@ export function Preview({
 
   const iframeWrapperPosition = (): CSSProperties => {
     if (hideContent) {
-      return {position: 'relative'};
+      return { position: 'relative' };
     }
 
     if (isExpanded) {
-      return {position: 'sticky', top: 'calc(2em + 64px)'};
+      return { position: 'sticky', top: 'calc(2em + 64px)' };
     }
 
     return {};

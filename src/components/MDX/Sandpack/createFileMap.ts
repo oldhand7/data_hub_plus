@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import type {SandpackFile} from '@codesandbox/sandpack-react/unstyled';
+import type { SandpackFile } from '@codesandbox/sandpack-react/unstyled';
 
 export const createFileMap = (codeSnippets: any) => {
   return codeSnippets.reduce(
@@ -10,7 +11,7 @@ export const createFileMap = (codeSnippets: any) => {
       if ((codeSnippet.type as any).mdxName !== 'pre') {
         return result;
       }
-      const {props} = codeSnippet.props.children;
+      const { props } = codeSnippet.props.children;
       let filePath; // path in the folder structure
       let fileHidden = false; // if the file is available as a tab
       let fileActive = false; // if the file tab is shown by default

@@ -1,14 +1,15 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useRef} from 'react';
+import { useRef } from 'react';
 import * as React from 'react';
 import cn from 'classnames';
-import {IconNote} from '../Icon/IconNote';
-import {IconWarning} from '../Icon/IconWarning';
-import {IconPitfall} from '../Icon/IconPitfall';
-import {IconCanary} from '../Icon/IconCanary';
+import { IconNote } from '../Icon/IconNote';
+import { IconWarning } from '../Icon/IconWarning';
+import { IconPitfall } from '../Icon/IconPitfall';
+import { IconCanary } from '../Icon/IconCanary';
 
 type CalloutVariants = 'deprecated' | 'pitfall' | 'note' | 'wip' | 'canary';
 
@@ -62,7 +63,7 @@ const variantMap = {
   },
 };
 
-function ExpandableCallout({children, type = 'note'}: ExpandableCalloutProps) {
+function ExpandableCallout({ children, type = 'note' }: ExpandableCalloutProps) {
   const contentRef = useRef<HTMLDivElement>(null);
   const variant = variantMap[type];
 

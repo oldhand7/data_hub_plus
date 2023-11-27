@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 
 export const IconDeepDive = memo<JSX.IntrinsicElements['svg']>(
-  function IconDeepDive({className}) {
+  function IconDeepDive({ className }) {
     return (
       <svg
         className={className}

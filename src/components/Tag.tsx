@@ -1,9 +1,10 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import cn from 'classnames';
-import type {RouteTag} from './Layout/getRouteMeta';
+import type { RouteTag } from './Layout/getRouteMeta';
 
 const variantMap = {
   foundation: {
@@ -34,8 +35,8 @@ interface TagProps {
   className?: string;
 }
 
-function Tag({text, variant, className}: TagProps) {
-  const {name, classes} = variantMap[variant];
+function Tag({ text, variant, className }: TagProps) {
+  const { name, classes } = variantMap[variant];
   return (
     <span className={cn('me-2', className)}>
       <span

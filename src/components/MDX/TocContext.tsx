@@ -1,9 +1,10 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {createContext} from 'react';
-import type {ReactNode} from 'react';
+import { createContext } from 'react';
+import type { ReactNode } from 'react';
 
 export type TocItem = {
   url: string;

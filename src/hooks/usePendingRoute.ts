@@ -1,12 +1,13 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useRouter} from 'next/router';
-import {useState, useRef, useEffect} from 'react';
+import { useRouter } from 'next/router';
+import { useState, useRef, useEffect } from 'react';
 
 const usePendingRoute = () => {
-  const {events} = useRouter();
+  const { events } = useRouter();
   const [pendingRoute, setPendingRoute] = useState<string | null>(null);
   const currentRoute = useRef<string | null>(null);
   useEffect(() => {

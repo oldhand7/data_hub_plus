@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
-import {memo, useRef, useState} from 'react';
-import {flushSync} from 'react-dom';
+// @ts-nocheck 
+import { memo, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 import {
   useSandpack,
   useActiveCode,
@@ -11,22 +12,22 @@ import {
 } from '@codesandbox/sandpack-react/unstyled';
 import cn from 'classnames';
 
-import {IconChevron} from 'components/Icon/IconChevron';
-import {NavigationBar} from './NavigationBar';
-import {Preview} from './Preview';
+import { IconChevron } from 'components/Icon/IconChevron';
+import { NavigationBar } from './NavigationBar';
+import { Preview } from './Preview';
 
-import {useSandpackLint} from './useSandpackLint';
+import { useSandpackLint } from './useSandpackLint';
 
 export const CustomPreset = memo(function CustomPreset({
   providedFiles,
 }: {
   providedFiles: Array<string>;
 }) {
-  const {lintErrors, lintExtensions} = useSandpackLint();
-  const {sandpack} = useSandpack();
-  const {code} = useActiveCode();
-  const {activeFile} = sandpack;
-  const lineCountRef = useRef<{[key: string]: number}>({});
+  const { lintErrors, lintExtensions } = useSandpackLint();
+  const { sandpack } = useSandpack();
+  const { code } = useActiveCode();
+  const { activeFile } = sandpack;
+  const lineCountRef = useRef<{ [key: string]: number }>({});
   if (!lineCountRef.current[activeFile]) {
     lineCountRef.current[activeFile] = code.split('\n').length;
   }

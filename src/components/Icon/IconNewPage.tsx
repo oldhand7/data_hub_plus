@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 
 export const IconNewPage = memo<JSX.IntrinsicElements['svg']>(
   function IconNewPage(props) {

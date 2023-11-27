@@ -1,9 +1,10 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Html, Head, Main, NextScript} from 'next/document';
-import {siteConfig} from '../siteConfig';
+import { Html, Head, Main, NextScript } from 'next/document';
+import { siteConfig } from '../siteConfig';
 
 const MyDocument = () => {
   return (

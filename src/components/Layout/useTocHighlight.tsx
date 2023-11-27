@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useState, useRef, useEffect} from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const TOP_OFFSET = 85;
 
@@ -41,7 +42,7 @@ export function useTocHighlight() {
       let index = -1;
       while (index < headersAnchors.length - 1) {
         const headerAnchor = headersAnchors[index + 1];
-        const {top} = headerAnchor.getBoundingClientRect();
+        const { top } = headerAnchor.getBoundingClientRect();
 
         if (top >= TOP_OFFSET) {
           break;

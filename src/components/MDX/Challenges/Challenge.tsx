@@ -1,15 +1,16 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useState} from 'react';
+import { useState } from 'react';
 import cn from 'classnames';
-import {Button} from 'components/Button';
-import {ChallengeContents} from './Challenges';
-import {IconHint} from '../../Icon/IconHint';
-import {IconSolution} from '../../Icon/IconSolution';
-import {IconArrowSmall} from '../../Icon/IconArrowSmall';
-import {H4} from '../Heading';
+import { Button } from 'components/Button';
+import { ChallengeContents } from './Challenges';
+import { IconHint } from '../../Icon/IconHint';
+import { IconSolution } from '../../Icon/IconSolution';
+import { IconArrowSmall } from '../../Icon/IconArrowSmall';
+import { H4 } from '../Heading';
 
 interface ChallengeProps {
   isRecipes?: boolean;

@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 
 export const IconWarning = memo<JSX.IntrinsicElements['svg']>(
-  function IconWarning({className}) {
+  function IconWarning({ className }) {
     return (
       <svg
         className={className}

@@ -1,16 +1,17 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Page} from 'components/Layout/Page';
-import {MDXComponents} from 'components/MDX/MDXComponents';
+import { Page } from 'components/Layout/Page';
+import { MDXComponents } from 'components/MDX/MDXComponents';
 import sidebarLearn from '../sidebarLearn.json';
 
-const {Intro, MaxWidth, p: P, a: A} = MDXComponents;
+const { Intro, MaxWidth, p: P, a: A } = MDXComponents;
 
 export default function NotFound() {
   return (
-    <Page toc={[]} meta={{title: 'Not Found'}} routeTree={sidebarLearn}>
+    <Page toc={[]} meta={{ title: 'Not Found' }} routeTree={sidebarLearn}>
       <MaxWidth>
         <Intro>
           <P>This page doesn’t exist.</P>

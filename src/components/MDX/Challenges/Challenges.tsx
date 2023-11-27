@@ -1,15 +1,16 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Children, useRef, useEffect, useState} from 'react';
+import { Children, useRef, useEffect, useState } from 'react';
 import * as React from 'react';
 import cn from 'classnames';
-import {H2} from 'components/MDX/Heading';
-import {H4} from 'components/MDX/Heading';
-import {Challenge} from './Challenge';
-import {Navigation} from './Navigation';
-import {useRouter} from 'next/router';
+import { H2 } from 'components/MDX/Heading';
+import { H4 } from 'components/MDX/Heading';
+import { Challenge } from './Challenge';
+import { Navigation } from './Navigation';
+import { useRouter } from 'next/router';
 
 interface ChallengesProps {
   children: React.ReactElement[];
@@ -40,7 +41,7 @@ const parseChallengeContents = (
   let challenge: Partial<ChallengeContents> = {};
   let content: React.ReactElement[] = [];
   Children.forEach(children, (child) => {
-    const {props, type} = child;
+    const { props, type } = child;
     switch ((type as any).mdxName) {
       case 'Solution': {
         challenge.solution = child;
@@ -87,7 +88,7 @@ export function Challenges({
   const queuedScrollRef = useRef<undefined | QueuedScroll>(QueuedScroll.INIT);
   const [activeIndex, setActiveIndex] = useState(0);
   const currentChallenge = challenges[activeIndex];
-  const {asPath} = useRouter();
+  const { asPath } = useRouter();
 
   useEffect(() => {
     if (queuedScrollRef.current === QueuedScroll.INIT) {

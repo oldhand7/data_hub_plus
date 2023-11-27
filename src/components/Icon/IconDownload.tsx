@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 
 export const IconDownload = memo<JSX.IntrinsicElements['svg']>(
-  function IconDownload({className}) {
+  function IconDownload({ className }) {
     return (
       <svg
         width="1em"

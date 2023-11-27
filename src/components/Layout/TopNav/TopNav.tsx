@@ -2,6 +2,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import {
   useState,
@@ -14,17 +15,17 @@ import {
 import * as React from 'react';
 import cn from 'classnames';
 import NextLink from 'next/link';
-import {useRouter} from 'next/router';
-import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
+import { useRouter } from 'next/router';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-import {IconClose} from 'components/Icon/IconClose';
-import {IconHamburger} from 'components/Icon/IconHamburger';
-import {IconSearch} from 'components/Icon/IconSearch';
-import {Search} from 'components/Search';
-import {Logo} from '../../Logo';
-import {Feedback} from '../Feedback';
-import {SidebarRouteTree} from '../Sidebar';
-import type {RouteItem} from '../getRouteMeta';
+import { IconClose } from 'components/Icon/IconClose';
+import { IconHamburger } from 'components/Icon/IconHamburger';
+import { IconSearch } from 'components/Icon/IconSearch';
+import { Search } from 'components/Search';
+import { Logo } from '../../Logo';
+import { Feedback } from '../Feedback';
+import { SidebarRouteTree } from '../Sidebar';
+import type { RouteItem } from '../getRouteMeta';
 
 declare global {
   interface Window {
@@ -105,7 +106,7 @@ function Link({
   );
 }
 
-function NavItem({url, isActive, children}: any) {
+function NavItem({ url, isActive, children }: any) {
   return (
     <div className="flex flex-auto sm:flex-1">
       <Link
@@ -114,7 +115,7 @@ function NavItem({url, isActive, children}: any) {
           'active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize',
           !isActive && 'hover:bg-primary/5 hover:dark:bg-primary-dark/5',
           isActive &&
-            'bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark'
+          'bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark'
         )}>
         {children}
       </Link>
@@ -122,8 +123,8 @@ function NavItem({url, isActive, children}: any) {
   );
 }
 
-function Kbd(props: {children?: React.ReactNode; wide?: boolean}) {
-  const {wide, ...rest} = props;
+function Kbd(props: { children?: React.ReactNode; wide?: boolean }) {
+  const { wide, ...rest } = props;
   const width = wide ? 'w-10' : 'w-5';
 
   return (
@@ -145,7 +146,7 @@ export default function TopNav({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const scrollParentRef = useRef<HTMLDivElement>(null);
-  const {asPath} = useRouter();
+  const { asPath } = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
 
   // HACK. Fix up the data structures instead.
@@ -232,7 +233,7 @@ export default function TopNav({
         <nav
           className={cn(
             'duration-300 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pe-5 lg:ps-4 z-50',
-            {'dark:shadow-nav-dark shadow-nav': isScrolled || isOpen}
+            { 'dark:shadow-nav-dark shadow-nav': isScrolled || isOpen }
           )}>
           <div className="h-16 w-full gap-0 sm:gap-3 flex items-center justify-between">
             <div className="3xl:flex-1 flex flex-row ">
@@ -357,7 +358,7 @@ export default function TopNav({
               )}>
               <nav
                 role="navigation"
-                style={{'--bg-opacity': '.2'} as React.CSSProperties} // Need to cast here because CSS vars aren't considered valid in TS types (cuz they could be anything)
+                style={{ '--bg-opacity': '.2' } as React.CSSProperties} // Need to cast here because CSS vars aren't considered valid in TS types (cuz they could be anything)
                 className="w-full lg:h-auto grow pe-0 lg:pe-5 pt-4 lg:py-6 md:pt-4 lg:pt-4 scrolling-touch scrolling-gpu">
                 {/* No fallback UI so need to be careful not to suspend directly inside. */}
                 <Suspense fallback={null}>

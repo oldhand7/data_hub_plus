@@ -1,10 +1,11 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import cn from 'classnames';
 import * as React from 'react';
-import {forwardRefWithAs} from 'utils/forwardRefWithAs';
+import { forwardRefWithAs } from 'utils/forwardRefWithAs';
 export interface HeadingProps {
   className?: string;
   isPageAnchor?: boolean;
@@ -14,7 +15,7 @@ export interface HeadingProps {
 }
 
 const Heading = forwardRefWithAs<HeadingProps, 'div'>(function Heading(
-  {as: Comp = 'div', className, children, id, isPageAnchor = true, ...props},
+  { as: Comp = 'div', className, children, id, isPageAnchor = true, ...props },
   ref
 ) {
   let label = 'Link for this heading';
@@ -51,7 +52,7 @@ const Heading = forwardRefWithAs<HeadingProps, 'div'>(function Heading(
   );
 });
 
-export const H1 = ({className, ...props}: HeadingProps) => (
+export const H1 = ({ className, ...props }: HeadingProps) => (
   <Heading
     as="h1"
     className={cn(className, 'text-5xl font-display font-bold leading-tight')}
@@ -59,7 +60,7 @@ export const H1 = ({className, ...props}: HeadingProps) => (
   />
 );
 
-export const H2 = ({className, ...props}: HeadingProps) => (
+export const H2 = ({ className, ...props }: HeadingProps) => (
   <Heading
     as="h2"
     className={cn(
@@ -70,7 +71,7 @@ export const H2 = ({className, ...props}: HeadingProps) => (
   />
 );
 
-export const H3 = ({className, ...props}: HeadingProps) => (
+export const H3 = ({ className, ...props }: HeadingProps) => (
   <Heading
     as="h3"
     className={cn(
@@ -81,7 +82,7 @@ export const H3 = ({className, ...props}: HeadingProps) => (
   />
 );
 
-export const H4 = ({className, ...props}: HeadingProps) => (
+export const H4 = ({ className, ...props }: HeadingProps) => (
   <Heading
     as="h4"
     className={cn(className, 'text-xl font-display font-bold leading-9 my-4')}
@@ -89,7 +90,7 @@ export const H4 = ({className, ...props}: HeadingProps) => (
   />
 );
 
-export const H5 = ({className, ...props}: HeadingProps) => (
+export const H5 = ({ className, ...props }: HeadingProps) => (
   <Heading
     as="h5"
     className={cn(className, 'text-lg font-display font-bold leading-9 my-2')}

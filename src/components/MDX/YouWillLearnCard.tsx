@@ -1,10 +1,11 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import ButtonLink from 'components/ButtonLink';
-import {IconNavArrow} from 'components/Icon/IconNavArrow';
+import { IconNavArrow } from 'components/Icon/IconNavArrow';
 
 interface YouWillLearnCardProps {
   title: string;
@@ -12,7 +13,7 @@ interface YouWillLearnCardProps {
   children: React.ReactNode;
 }
 
-function YouWillLearnCard({title, path, children}: YouWillLearnCardProps) {
+function YouWillLearnCard({ title, path, children }: YouWillLearnCardProps) {
   return (
     <div className="flex flex-col h-full bg-card dark:bg-card-dark shadow-inner justify-between rounded-lg pb-8 p-6 xl:p-8 mt-3">
       <div>

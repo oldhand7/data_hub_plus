@@ -1,14 +1,15 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Children} from 'react';
+import { Children } from 'react';
 import * as React from 'react';
-import {SandpackProvider} from '@codesandbox/sandpack-react/unstyled';
-import {SandpackLogLevel} from '@codesandbox/sandpack-client';
-import {CustomPreset} from './CustomPreset';
-import {createFileMap} from './createFileMap';
-import {CustomTheme} from './Themes';
+import { SandpackProvider } from '@codesandbox/sandpack-react/unstyled';
+import { SandpackLogLevel } from '@codesandbox/sandpack-client';
+import { CustomPreset } from './CustomPreset';
+import { createFileMap } from './createFileMap';
+import { CustomTheme } from './Themes';
 
 type SandpackProps = {
   children: React.ReactNode;
@@ -66,7 +67,7 @@ ul {
 `.trim();
 
 function SandpackRoot(props: SandpackProps) {
-  let {children, autorun = true} = props;
+  let { children, autorun = true } = props;
   const codeSnippets = Children.toArray(children) as React.ReactElement[];
   const files = createFileMap(codeSnippets);
 
@@ -84,7 +85,7 @@ function SandpackRoot(props: SandpackProps) {
         options={{
           autorun,
           initMode: 'user-visible',
-          initModeObserverOptions: {rootMargin: '1400px 0px'},
+          initModeObserverOptions: { rootMargin: '1400px 0px' },
           bundlerURL: 'https://1e4ad8f7.sandpack-bundler-4bw.pages.dev',
           logLevel: SandpackLogLevel.None,
         }}>

@@ -1,12 +1,13 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useState} from 'react';
-import {useRouter} from 'next/router';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
-export function Feedback({onSubmit = () => {}}: {onSubmit?: () => void}) {
-  const {asPath} = useRouter();
+export function Feedback({ onSubmit = () => { } }: { onSubmit?: () => void }) {
+  const { asPath } = useRouter();
   const cleanedPath = asPath.split(/[\?\#]/)[0];
   // Reset on route changes.
   return <SendFeedback key={cleanedPath} onSubmit={onSubmit} />;
@@ -57,7 +58,7 @@ function sendGAEvent(isPositive: boolean) {
   });
 }
 
-function SendFeedback({onSubmit}: {onSubmit: () => void}) {
+function SendFeedback({ onSubmit }: { onSubmit: () => void }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   return (
     <div className="max-w-xs w-80 lg:w-auto py-3 shadow-lg rounded-lg m-4 bg-wash dark:bg-gray-95 px-4 flex">

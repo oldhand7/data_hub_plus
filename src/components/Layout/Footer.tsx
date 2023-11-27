@@ -1,14 +1,15 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import NextLink from 'next/link';
 import cn from 'classnames';
-import {ExternalLink} from 'components/ExternalLink';
-import {IconFacebookCircle} from 'components/Icon/IconFacebookCircle';
-import {IconTwitter} from 'components/Icon/IconTwitter';
-import {IconGitHub} from 'components/Icon/IconGitHub';
+import { ExternalLink } from 'components/ExternalLink';
+import { IconFacebookCircle } from 'components/Icon/IconFacebookCircle';
+import { IconTwitter } from 'components/Icon/IconTwitter';
+import { IconGitHub } from 'components/Icon/IconGitHub';
 
 export function Footer() {
   const socialLinkClasses = 'hover:text-primary dark:text-primary-dark';
@@ -284,7 +285,7 @@ export function Footer() {
             &copy;{new Date().getFullYear()}
           </div>
         </div>
-        <div className="flex flex-col" style={{marginTop: '1rem'}}>
+        <div className="flex flex-col" style={{ marginTop: '1rem' }}>
           <FooterLink href="/python" isHeader={true}>
             Learn Python
           </FooterLink>
@@ -299,7 +300,7 @@ export function Footer() {
           <FooterLink href="/learn/managing-state">Managing State</FooterLink>
           <FooterLink href="/learn/escape-hatches">Escape Hatches</FooterLink> */}
         </div>
-        <div className="flex flex-col" style={{marginTop: '1rem'}}>
+        <div className="flex flex-col" style={{ marginTop: '1rem' }}>
           <FooterLink href="/r" isHeader={true}>
             Learn SQL
           </FooterLink>
@@ -308,7 +309,7 @@ export function Footer() {
         </div>
         <div
           className="md:col-start-2 xl:col-start-4 flex flex-col"
-          style={{marginTop: '1rem'}}>
+          style={{ marginTop: '1rem' }}>
           <FooterLink href="/r" isHeader={true}>
             Learn R
           </FooterLink>

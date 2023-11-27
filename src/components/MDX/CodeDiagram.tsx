@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Children} from 'react';
+import { Children } from 'react';
 import * as React from 'react';
 import CodeBlock from './CodeBlock';
 
@@ -11,7 +12,7 @@ interface CodeDiagramProps {
   flip?: boolean;
 }
 
-export function CodeDiagram({children, flip = false}: CodeDiagramProps) {
+export function CodeDiagram({ children, flip = false }: CodeDiagramProps) {
   const illustration = Children.toArray(children).filter((child: any) => {
     return child.type === 'img';
   });

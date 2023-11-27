@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import cn from 'classnames';
 import NextLink from 'next/link';

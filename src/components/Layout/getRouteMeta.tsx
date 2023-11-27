@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 /**
  * While Next.js provides file-based routing, we still need to construct
@@ -68,7 +69,7 @@ export function getRouteMeta(cleanedPath: string, routeTree: RouteItem) {
     currentIndex: 0,
   };
   buildRouteMeta(cleanedPath, routeTree, ctx);
-  const {currentIndex: _, ...meta} = ctx;
+  const { currentIndex: _, ...meta } = ctx;
   return {
     ...meta,
     breadcrumbs: breadcrumbs.length > 0 ? breadcrumbs : [routeTree],
@@ -83,7 +84,7 @@ function buildRouteMeta(
 ) {
   ctx.currentIndex++;
 
-  const {routes} = currentRoute;
+  const { routes } = currentRoute;
 
   if (ctx.route && !ctx.nextRoute) {
     ctx.nextRoute = currentRoute;

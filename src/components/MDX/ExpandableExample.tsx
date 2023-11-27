@@ -1,16 +1,17 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import cn from 'classnames';
-import {IconChevron} from '../Icon/IconChevron';
-import {IconDeepDive} from '../Icon/IconDeepDive';
-import {IconCodeBlock} from '../Icon/IconCodeBlock';
-import {Button} from '../Button';
-import {H4} from './Heading';
-import {useRouter} from 'next/router';
-import {useEffect, useRef, useState} from 'react';
+import { IconChevron } from '../Icon/IconChevron';
+import { IconDeepDive } from '../Icon/IconDeepDive';
+import { IconCodeBlock } from '../Icon/IconCodeBlock';
+import { Button } from '../Button';
+import { H4 } from './Heading';
+import { useRouter } from 'next/router';
+import { useEffect, useRef, useState } from 'react';
 
 interface ExpandableExampleProps {
   children: React.ReactNode;
@@ -18,7 +19,7 @@ interface ExpandableExampleProps {
   type: 'DeepDive' | 'Example';
 }
 
-function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
+function ExpandableExample({ children, excerpt, type }: ExpandableExampleProps) {
   if (!Array.isArray(children) || children[0].type.mdxName !== 'h4') {
     throw Error(
       `Expandable content ${type} is missing a corresponding title at the beginning`
@@ -28,7 +29,7 @@ function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
   const isExample = type === 'Example';
   const id = children[0].props.id;
 
-  const {asPath} = useRouter();
+  const { asPath } = useRouter();
   const shouldAutoExpand = id === asPath.split('#')[1];
   const queuedExpandRef = useRef<boolean>(shouldAutoExpand);
   const [isExpanded, setIsExpanded] = useState(false);

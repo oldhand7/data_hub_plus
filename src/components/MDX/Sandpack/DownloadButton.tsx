@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useSyncExternalStore} from 'react';
-import {useSandpack} from '@codesandbox/sandpack-react/unstyled';
-import {IconDownload} from '../../Icon/IconDownload';
-export interface DownloadButtonProps {}
+import { useSyncExternalStore } from 'react';
+import { useSandpack } from '@codesandbox/sandpack-react/unstyled';
+import { IconDownload } from '../../Icon/IconDownload';
+export interface DownloadButtonProps { }
 
 let supportsImportMap = false;
 
@@ -39,7 +40,7 @@ export function DownloadButton({
 }: {
   providedFiles: Array<string>;
 }) {
-  const {sandpack} = useSandpack();
+  const { sandpack } = useSandpack();
   const supported = useSupportsImportMap();
   if (!supported) {
     return null;

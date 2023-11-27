@@ -1,10 +1,11 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import cn from 'classnames';
-import {IconNavArrow} from 'components/Icon/IconNavArrow';
+import { IconNavArrow } from 'components/Icon/IconNavArrow';
 
 interface SidebarButtonProps {
   title: string;

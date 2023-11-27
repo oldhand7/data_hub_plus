@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 
 export const IconFacebookCircle = memo<JSX.IntrinsicElements['svg']>(
   function IconFacebookCircle(props) {

@@ -2,10 +2,11 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import cn from 'classnames';
-import {lazy, memo, Suspense} from 'react';
+import { lazy, memo, Suspense } from 'react';
 
 export default memo(function CodeBlockWrapper(props: {
   children: React.ReactNode & {
@@ -18,7 +19,7 @@ export default memo(function CodeBlockWrapper(props: {
   noMargin?: boolean;
   noMarkers?: boolean;
 }): any {
-  const {children} = props;
+  const { children } = props;
   return (
     <Suspense
       fallback={

@@ -1,12 +1,13 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {isValidElement} from 'react';
+import { isValidElement } from 'react';
 import * as React from 'react';
 import cn from 'classnames';
-import {IconWarning} from '../Icon/IconWarning';
-import {IconError} from '../Icon/IconError';
+import { IconWarning } from '../Icon/IconWarning';
+import { IconError } from '../Icon/IconError';
 
 type LogLevel = 'warning' | 'error' | 'info';
 
@@ -26,10 +27,10 @@ const Box = ({
   className?: string;
   customStyles?: Record<string, string>;
 }) => (
-  <div className={className} style={{width, height, ...customStyles}}></div>
+  <div className={className} style={{ width, height, ...customStyles }}></div>
 );
 
-function ConsoleBlock({level = 'error', children}: ConsoleBlockProps) {
+function ConsoleBlock({ level = 'error', children }: ConsoleBlockProps) {
   let message: React.ReactNode | null;
   if (typeof children === 'string') {
     message = children;

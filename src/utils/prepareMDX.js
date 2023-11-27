@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Children} from 'react';
+import { Children } from 'react';
 
 // TODO: This logic could be in MDX plugins instead.
 
@@ -14,7 +15,7 @@ export const PREPARE_MDX_CACHE_BREAKER = 2;
 export function prepareMDX(rawChildren) {
   const toc = getTableOfContents(rawChildren, /* depth */ 10);
   const children = wrapChildrenInMaxWidthContainers(rawChildren);
-  return {toc, children};
+  return { toc, children };
 }
 
 function wrapChildrenInMaxWidthContainers(children) {

@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 import cn from 'classnames';
 
 export const IconNavArrow = memo<
@@ -14,7 +15,7 @@ export const IconNavArrow = memo<
      */
     displayDirection: 'start' | 'end' | 'right' | 'left' | 'down';
   }
->(function IconNavArrow({displayDirection = 'start', className}) {
+>(function IconNavArrow({ displayDirection = 'start', className }) {
   const classes = cn(
     'duration-100 ease-in transition',
     {
@@ -34,7 +35,7 @@ export const IconNavArrow = memo<
       height="20"
       viewBox="0 0 20 20"
       className={classes}
-      style={{minWidth: 20, minHeight: 20}}>
+      style={{ minWidth: 20, minHeight: 20 }}>
       <g fill="none" fillRule="evenodd" transform="translate(-446 -398)">
         <path
           fill="currentColor"

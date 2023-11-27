@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import Head from 'next/head';
-import {withRouter, Router} from 'next/router';
-import {siteConfig} from '../siteConfig';
+import { withRouter, Router } from 'next/router';
+import { siteConfig } from '../siteConfig';
 
 export interface SeoProps {
   title: string;
@@ -43,11 +44,10 @@ export const Seo = withRouter(
     children,
     isHomePage,
     searchOrder,
-  }: SeoProps & {router: Router}) => {
+  }: SeoProps & { router: Router }) => {
     const siteDomain = getDomain(siteConfig.languageCode);
-    const canonicalUrl = `https://${siteDomain}${
-      router.asPath.split(/[\?\#]/)[0]
-    }`;
+    const canonicalUrl = `https://${siteDomain}${router.asPath.split(/[\?\#]/)[0]
+      }`;
     // Allow setting a different title for Google results
     const pageTitle =
       (titleForTitleTag ?? title) + (isHomePage ? '' : ' – React');

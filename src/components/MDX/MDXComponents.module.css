@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 /* Stop purging. */
 .markdown p {

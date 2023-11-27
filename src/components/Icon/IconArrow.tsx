@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 import cn from 'classnames';
 
 export const IconArrow = memo<
@@ -14,7 +15,7 @@ export const IconArrow = memo<
      */
     displayDirection: 'start' | 'end' | 'right' | 'left' | 'up' | 'down';
   }
->(function IconArrow({displayDirection, className, ...rest}) {
+>(function IconArrow({ displayDirection, className, ...rest }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

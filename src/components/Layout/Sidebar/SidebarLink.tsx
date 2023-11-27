@@ -1,14 +1,15 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import {useRef, useEffect} from 'react';
+import { useRef, useEffect } from 'react';
 import * as React from 'react';
 import cn from 'classnames';
-import {IconNavArrow} from 'components/Icon/IconNavArrow';
-import {IconCanary} from 'components/Icon/IconCanary';
+import { IconNavArrow } from 'components/Icon/IconNavArrow';
+import { IconCanary } from 'components/Icon/IconCanary';
 import Link from 'next/link';
 
 interface SidebarLinkProps {

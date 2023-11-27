@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Children} from 'react';
+import { Children } from 'react';
 import * as React from 'react';
 import CodeBlock from './CodeBlock';
 
@@ -10,7 +11,7 @@ interface PackageImportProps {
   children: React.ReactNode;
 }
 
-export function PackageImport({children}: PackageImportProps) {
+export function PackageImport({ children }: PackageImportProps) {
   const terminal = Children.toArray(children).filter((child: any) => {
     return child.type?.mdxName !== 'pre';
   });

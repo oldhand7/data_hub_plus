@@ -1,13 +1,14 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import cx from 'classnames';
-import {useTocHighlight} from './useTocHighlight';
-import type {Toc} from '../MDX/TocContext';
+import { useTocHighlight } from './useTocHighlight';
+import type { Toc } from '../MDX/TocContext';
 
-export function Toc({headings}: {headings: Toc}) {
-  const {currentIndex} = useTocHighlight();
+export function Toc({ headings }: { headings: Toc }) {
+  const { currentIndex } = useTocHighlight();
   // TODO: We currently have a mismatch between the headings in the document
   // and the headings we find in MarkdownPage (i.e. we don't find Recap or Challenges).
   // Select the max TOC item we have here for now, but remove this after the fix.

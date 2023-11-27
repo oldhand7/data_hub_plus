@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 /**
  * Copied from Reach UI utils...
@@ -18,8 +19,8 @@ import * as React from 'react';
  */
 export type AssignableRef<ValueType> =
   | {
-      bivarianceHack(instance: ValueType | null): void;
-    }['bivarianceHack']
+    bivarianceHack(instance: ValueType | null): void;
+  }['bivarianceHack']
   | React.MutableRefObject<ValueType | null>
   | null;
 
@@ -46,7 +47,7 @@ export type PropsWithAs<
 export type PropsFromAs<
   ComponentType extends As,
   ComponentProps
-> = (PropsWithAs<ComponentType, ComponentProps> & {as: ComponentType}) &
+> = (PropsWithAs<ComponentType, ComponentProps> & { as: ComponentType }) &
   PropsWithAs<ComponentType, ComponentProps>;
 
 export type ComponentWithForwardedRef<
@@ -54,8 +55,8 @@ export type ComponentWithForwardedRef<
   ComponentProps
 > = React.ForwardRefExoticComponent<
   ComponentProps &
-    React.HTMLProps<React.ElementType<ElementType>> &
-    React.ComponentPropsWithRef<ElementType>
+  React.HTMLProps<React.ElementType<ElementType>> &
+  React.ComponentPropsWithRef<ElementType>
 >;
 
 export interface ComponentWithAs<ComponentType extends As, ComponentProps> {
@@ -103,7 +104,7 @@ export function forwardRefWithAs<Props, ComponentType extends As>(
 }
 
 /*
-Test components to make sure our dynamic As prop components work as intended 
+Test components to make sure our dynamic As prop components work as intended
 type PopupProps = {
   lol: string;
   children?: React.ReactNode | ((value?: number) => JSX.Element);

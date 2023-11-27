@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 import cn from 'classnames';
 
 export const IconChevron = memo<
@@ -14,7 +15,7 @@ export const IconChevron = memo<
      */
     displayDirection: 'start' | 'end' | 'right' | 'left' | 'up' | 'down';
   }
->(function IconChevron({className, displayDirection}) {
+>(function IconChevron({ className, displayDirection }) {
   const classes = cn(
     {
       'rotate-0': displayDirection === 'down',

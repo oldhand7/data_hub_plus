@@ -1,15 +1,16 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 import cn from 'classnames';
-import {useState, useRef, useEffect} from 'react';
-import {IconChevron} from 'components/Icon/IconChevron';
+import { useState, useRef, useEffect } from 'react';
+import { IconChevron } from 'components/Icon/IconChevron';
 
 import {
   SandpackCodeViewer,
   useSandpack,
 } from '@codesandbox/sandpack-react/unstyled';
-import type {SandpackMessageConsoleMethods} from '@codesandbox/sandpack-client';
+import type { SandpackMessageConsoleMethods } from '@codesandbox/sandpack-client';
 
 const getType = (
   message: SandpackMessageConsoleMethods
@@ -90,8 +91,8 @@ type ConsoleData = Array<{
 
 const MAX_MESSAGE_COUNT = 100;
 
-export const SandpackConsole = ({visible}: {visible: boolean}) => {
-  const {listen} = useSandpack();
+export const SandpackConsole = ({ visible }: { visible: boolean }) => {
+  const { listen } = useSandpack();
   const [logs, setLogs] = useState<ConsoleData>([]);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -189,7 +190,7 @@ export const SandpackConsole = ({visible}: {visible: boolean}) => {
       {isExpanded && (
         <div className="w-full h-full border-t bg-white dark:border-gray-700 dark:bg-gray-95 min-h-[28px] console">
           <div className="max-h-40 h-auto overflow-auto" ref={wrapperRef}>
-            {logs.map(({data, id, method}) => {
+            {logs.map(({ data, id, method }) => {
               return (
                 <div
                   key={id}

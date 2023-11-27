@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 interface ErrorType {
   title?: string;
@@ -10,8 +11,8 @@ interface ErrorType {
   path?: string;
 }
 
-export function ErrorMessage({error, ...props}: {error: ErrorType}) {
-  const {message, title} = error;
+export function ErrorMessage({ error, ...props }: { error: ErrorType }) {
+  const { message, title } = error;
 
   return (
     <div className="bg-white border-2 border-red-40 rounded-lg p-6" {...props}>

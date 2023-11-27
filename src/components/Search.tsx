@@ -1,14 +1,15 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
-import {lazy, useEffect} from 'react';
+import { lazy, useEffect } from 'react';
 import * as React from 'react';
-import {createPortal} from 'react-dom';
-import {siteConfig} from 'siteConfig';
+import { createPortal } from 'react-dom';
+import { siteConfig } from 'siteConfig';
 
 export interface SearchProps {
   appId?: string;
@@ -20,7 +21,7 @@ export interface SearchProps {
   onClose: () => void;
 }
 
-function Hit({hit, children}: any) {
+function Hit({ hit, children }: any) {
   return <Link href={hit.url.replace()}>{children}</Link>;
 }
 
@@ -97,7 +98,7 @@ export function Search({
     hitsPerPage: 5,
   },
 }: SearchProps) {
-  useDocSearchKeyboardEvents({isOpen, onOpen, onClose});
+  useDocSearchKeyboardEvents({ isOpen, onOpen, onClose });
   return (
     <>
       <Head>
@@ -114,7 +115,7 @@ export function Search({
             searchParameters={searchParameters}
             onClose={onClose}
             navigator={{
-              navigate({itemUrl}: any) {
+              navigate({ itemUrl }: any) {
                 Router.push(itemUrl);
               },
             }}

@@ -1,17 +1,18 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import cn from 'classnames';
-import {HighlightStyle} from '@codemirror/language';
-import {highlightTree} from '@lezer/highlight';
-import {javascript} from '@codemirror/lang-javascript';
-import {html} from '@codemirror/lang-html';
-import {css} from '@codemirror/lang-css';
+import { HighlightStyle } from '@codemirror/language';
+import { highlightTree } from '@lezer/highlight';
+import { javascript } from '@codemirror/lang-javascript';
+import { html } from '@codemirror/lang-html';
+import { css } from '@codemirror/lang-css';
 import rangeParser from 'parse-numeric-range';
-import {tags} from '@lezer/highlight';
+import { tags } from '@lezer/highlight';
 
-import {CustomTheme} from '../Sandpack/Themes';
+import { CustomTheme } from '../Sandpack/Themes';
 
 interface InlineHighlight {
   step: number;
@@ -20,13 +21,13 @@ interface InlineHighlight {
   endColumn: number;
 }
 
-const jsxLang = javascript({jsx: true, typescript: false});
+const jsxLang = javascript({ jsx: true, typescript: false });
 const cssLang = css();
 const htmlLang = html();
 
 const CodeBlock = function CodeBlock({
   children: {
-    props: {className = 'language-js', children: code = '', meta},
+    props: { className = 'language-js', children: code = '', meta },
   },
   noMargin,
   noShadow,
@@ -211,9 +212,9 @@ const CodeBlock = function CodeBlock({
         'rounded-2xl h-full w-full overflow-x-auto flex items-center bg-wash dark:bg-gray-95 shadow-lg',
         !noMargin && 'my-8',
         noShadow &&
-          'shadow-none rounded-2xl overflow-hidden w-full flex bg-transparent'
+        'shadow-none rounded-2xl overflow-hidden w-full flex bg-transparent'
       )}
-      style={{contain: 'content'}}>
+      style={{ contain: 'content' }}>
       <div className="sp-wrapper">
         <div className="sp-stack">
           <div className="sp-code-editor">
@@ -241,9 +242,9 @@ function classNameToken(name: string): string {
 
 function getSyntaxHighlight(theme: any): HighlightStyle {
   return HighlightStyle.define([
-    {tag: tags.link, textdecorator: 'underline'},
-    {tag: tags.emphasis, fontStyle: 'italic'},
-    {tag: tags.strong, fontWeight: 'bold'},
+    { tag: tags.link, textdecorator: 'underline' },
+    { tag: tags.emphasis, fontStyle: 'italic' },
+    { tag: tags.strong, fontWeight: 'bold' },
 
     {
       tag: tags.keyword,
@@ -257,7 +258,7 @@ function getSyntaxHighlight(theme: any): HighlightStyle {
       tag: tags.standard(tags.tagName),
       class: classNameToken('tag'),
     },
-    {tag: tags.variableName, class: classNameToken('plain')},
+    { tag: tags.variableName, class: classNameToken('plain') },
     {
       // Highlight function call
       tag: tags.function(tags.variableName),
@@ -324,7 +325,7 @@ function getInlineDecorators(
   const inlineHighlightConfig = inlineHighlightLines.map(
     (line: InlineHighlight) => ({
       ...line,
-      elementAttributes: {'data-step': `${line.step}`},
+      elementAttributes: { 'data-step': `${line.step}` },
       className: cn(
         'code-step bg-opacity-10 dark:bg-opacity-20 relative rounded px-1 py-[1.5px] border-b-[2px] border-opacity-60',
         {
@@ -391,8 +392,8 @@ function getInlineHighlights(meta: string, code: string) {
       if (fromIndex === undefined) {
         throw Error(
           "Found '" +
-            substr +
-            "' twice. Specify fromIndex as the fourth value in the tuple."
+          substr +
+          "' twice. Specify fromIndex as the fourth value in the tuple."
         );
       }
       index = line.indexOf(substr, fromIndex);

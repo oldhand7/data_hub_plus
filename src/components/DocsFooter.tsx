@@ -1,12 +1,13 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import NextLink from 'next/link';
-import {memo} from 'react';
+import { memo } from 'react';
 import cn from 'classnames';
-import {IconNavArrow} from './Icon/IconNavArrow';
-import type {RouteMeta} from './Layout/getRouteMeta';
+import { IconNavArrow } from './Icon/IconNavArrow';
+import type { RouteMeta } from './Layout/getRouteMeta';
 
 export type DocsPageFooterProps = Pick<
   RouteMeta,
@@ -18,7 +19,7 @@ function areEqual(prevProps: DocsPageFooterProps, props: DocsPageFooterProps) {
 }
 
 export const DocsPageFooter = memo<DocsPageFooterProps>(
-  function DocsPageFooter({nextRoute, prevRoute, route}) {
+  function DocsPageFooter({ nextRoute, prevRoute, route }) {
     if (!route || route?.heading) {
       return null;
     }

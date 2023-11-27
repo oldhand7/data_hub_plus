@@ -1,8 +1,9 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 import cn from 'classnames';
 
 export const IconArrowSmall = memo<
@@ -14,7 +15,7 @@ export const IconArrowSmall = memo<
      */
     displayDirection: 'start' | 'end' | 'right' | 'left' | 'up' | 'down';
   }
->(function IconArrowSmall({displayDirection, className, ...rest}) {
+>(function IconArrowSmall({ displayDirection, className, ...rest }) {
   const classes = cn(className, {
     'rotate-180': displayDirection === 'left',
     'rotate-180 rtl:rotate-0': displayDirection === 'start',

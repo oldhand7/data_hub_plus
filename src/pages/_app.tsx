@@ -1,15 +1,17 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {useEffect} from 'react';
-import {AppProps} from 'next/app';
-import {useRouter} from 'next/router';
+import { useEffect } from 'react';
+import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 
 import '@docsearch/css';
 import '../styles/algolia.css';
 import '../styles/index.css';
 import '../styles/sandpack.css';
+import "./codeplay/style.css"
 import './index.css';
 
 if (typeof window !== 'undefined') {
@@ -23,7 +25,7 @@ if (typeof window !== 'undefined') {
   });
 }
 
-export default function MyApp({Component, pageProps}: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {

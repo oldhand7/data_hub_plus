@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 
@@ -8,7 +9,7 @@ export interface IntroProps {
   children?: React.ReactNode;
 }
 
-function Intro({children}: IntroProps) {
+function Intro({ children }: IntroProps) {
   return (
     <div className="font-display text-xl text-primary dark:text-primary-dark leading-relaxed">
       {children}

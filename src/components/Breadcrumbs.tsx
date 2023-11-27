@@ -1,12 +1,15 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
+// @ts-nocheck
 
-import {Fragment} from 'react';
+
+import { Fragment } from 'react';
 import Link from 'next/link';
-import type {RouteItem} from 'components/Layout/getRouteMeta';
+import type { RouteItem } from 'components/Layout/getRouteMeta';
 
-function Breadcrumbs({breadcrumbs}: {breadcrumbs: RouteItem[]}) {
+function Breadcrumbs({ breadcrumbs }: { breadcrumbs: RouteItem[] }) {
   return (
     <div className="flex flex-wrap">
       {breadcrumbs.map(

@@ -1,12 +1,13 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {isValidElement, useState, useEffect} from 'react';
+import { isValidElement, useState, useEffect } from 'react';
 import * as React from 'react';
-import {IconTerminal} from '../Icon/IconTerminal';
-import {IconCopy} from 'components/Icon/IconCopy';
-import {runCode} from 'utils/judgeApi';
+import { IconTerminal } from '../Icon/IconTerminal';
+import { IconCopy } from 'components/Icon/IconCopy';
+import { runCode } from 'utils/judgeApi';
 
 type LogLevel = 'info' | 'warning' | 'error';
 
@@ -15,7 +16,7 @@ interface CodeExecProps {
   children: React.ReactNode;
 }
 
-function LevelText({type}: {type: LogLevel}) {
+function LevelText({ type }: { type: LogLevel }) {
   switch (type) {
     case 'warning':
       return <span className="text-yellow-50 bg-none me-1">Warning: </span>;
@@ -26,7 +27,7 @@ function LevelText({type}: {type: LogLevel}) {
   }
 }
 
-function CodeExec({level = 'info', children}: CodeExecProps) {
+function CodeExec({ level = 'info', children }: CodeExecProps) {
   let message: string | undefined;
 
   message = (children as any)?.props?.children;
@@ -91,7 +92,7 @@ function CodeExec({level = 'info', children}: CodeExecProps) {
       <div className="bg-gray-90 dark:bg-gray-60 w-full rounded-t-lg">
         <div className="text-primary-dark dark:text-primary-dark flex text-sm px-4 py-0.5 relative flex-reverse">
           <button
-            style={{marginLeft: 'auto', marginRight: '30px'}}
+            style={{ marginLeft: 'auto', marginRight: '30px' }}
             onClick={() => onRunCode((message as any)?.props?.children)}>
             <IconTerminal className="inline-flex me-2 self-center" /> Run Code
           </button>

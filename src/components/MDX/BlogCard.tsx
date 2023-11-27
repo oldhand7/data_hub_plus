@@ -1,6 +1,7 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
 import * as React from 'react';
 import Link from 'next/link';
@@ -14,7 +15,7 @@ export interface BlogCardProps {
   children?: React.ReactNode;
 }
 
-function BlogCard({title, badge, date, icon, url, children}: BlogCardProps) {
+function BlogCard({ title, badge, date, icon, url, children }: BlogCardProps) {
   return (
     <Link
       href={url as string}

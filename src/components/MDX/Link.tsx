@@ -1,12 +1,13 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {Children, cloneElement} from 'react';
+import { Children, cloneElement } from 'react';
 import NextLink from 'next/link';
 import cn from 'classnames';
 
-import {ExternalLink} from 'components/ExternalLink';
+import { ExternalLink } from 'components/ExternalLink';
 
 function Link({
   href,

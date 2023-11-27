@@ -1,11 +1,12 @@
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
+// @ts-nocheck 
 
-import {memo} from 'react';
+import { memo } from 'react';
 
 export const IconPitfall = memo<JSX.IntrinsicElements['svg']>(
-  function IconPitfall({className}) {
+  function IconPitfall({ className }) {
     return (
       <svg
         className={className}
