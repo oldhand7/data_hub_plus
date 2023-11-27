@@ -68,8 +68,8 @@ function RunCodeBlock({ children }: RunCodeBlockProps) {
 
     localStorage.setItem("code", sMessage.toString())
     localStorage.setItem("codeMode", codeMode.toString())
-    // window.open("/codeplay", "_blank")
-    router.push('/codeplay');
+    window.open("/codeplay", "_blank")
+    // router.push('/codeplay');
 
   }
   const onRun = async () => {

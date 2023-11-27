@@ -1,23 +1,21 @@
-
-// @ts-nocheck
 import React, { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { runCode } from 'utils/judgeApi';
 // import { Controlled as CodeMirror } from 'react-codemirror2';
-import('codemirror/mode/r/r')
-import('codemirror/mode/sql/sql')
-import('codemirror/lib/codemirror.css')
+// import('codemirror/mode/r/r')
+// import('codemirror/mode/sql/sql')
+// import('codemirror/lib/codemirror.css')
 
-import('codemirror/theme/material.css')
-import('codemirror/mode/python/python')
+// import('codemirror/theme/material.css')
+// import('codemirror/mode/python/python')
 
-const CodeMirror = dynamic(
-    () =>
+// const CodeMirror = dynamic(
+//     () =>
 
-        import('react-codemirror2')
-    ,
-    { ssr: false }
-);
+//         import('react-codemirror2')
+//     ,
+//     { ssr: false }
+// );
 let gValue = ""
 const SplitEditor = () => {
     const [code, setCode] = useState<string>('');
@@ -30,10 +28,11 @@ const SplitEditor = () => {
     useEffect(() => {
         try {
             let codeMode = parseInt(localStorage.getItem("codeMode") || "")
+            let code = (localStorage.getItem("code") || "")
             console.log(code);
 
             setActiveButton(codeMode)
-            setCode("hello")
+            setCode(code)
             // editorRef.current.setValue(code)
             // localStorage.removeItem("code")
             // localStorage.removeItem("codeMode")
@@ -51,7 +50,8 @@ const SplitEditor = () => {
 
 
     const handleClick = (button: any) => {
-        editorRef.current.setValue("");
+        // editorRef.current.setValue("");
+        setCode("")
         setActiveButton(button);
     };
 
@@ -70,7 +70,7 @@ const SplitEditor = () => {
             //     codeMode = 82
             // } else codeMode = 80
 
-            let input = editorRef.current.getValue();
+            let input = code
             let res = await runCode(input, activeButton);
             console.log(res);
 
@@ -109,7 +109,7 @@ const SplitEditor = () => {
                     </button>
                 </div>
 
-                <CodeMirror
+                {/* <CodeMirror
                     value={code}
                     editorDidMount={(editor) => {
 
@@ -128,7 +128,23 @@ const SplitEditor = () => {
                     }}
 
                     onBeforeChange={handleCodeChange}
+                /> */}
+
+
+                <textarea
+                    className="code-textarea"
+                    value={code}
+                    style={{
+                        padding: "20px",
+                        width: "100%",
+                        height: " 90vh"
+                    }}
+                    onChange={(e) => setCode(e.target.value)}
+                    rows={10}
+                    cols={50}
                 />
+
+
             </div>
             <div style={{ flex: 100 - splitRatio, height: '100vh' }}>
                 <div
